@@ -6,8 +6,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.valerie.vp_week7.navigation.AppNavHost
-import com.valerie.vp_week7.ui.theme.Vp_week7Theme
+import com.valerie.vp_week7.soal1.Soal1App
+import com.valerie.vp_week7.soal2.Soal2App
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,9 +17,9 @@ class MainActivity : ComponentActivity() {
         )
         super.onCreate(savedInstanceState)
         setContent {
-            Vp_week7Theme {
-                AppNavHost()
-            }
+            // Uncomment salah satu soal sesuai dengan soal yang ingin di run
+            Soal1App()      // Soal 1: PokeTracker
+            // Soal2App()   // Soal 2: Music Artist
         }
     }
 }

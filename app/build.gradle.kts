@@ -1,14 +1,7 @@
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-}
-
-val localProps = Properties().apply {
-    val f = rootProject.file("local.properties")
-    if (f.exists()) f.inputStream().use { load(it) }
 }
 
 android {
@@ -23,8 +16,6 @@ android {
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
-        // "123" = free public test key TheAudioDB. Isi AUDIODB_API_KEY di local.properties untuk key premium.
-        buildConfigField("String", "AUDIODB_API_KEY", "\"${localProps.getProperty("AUDIODB_API_KEY", "123")}\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
