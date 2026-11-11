@@ -21,6 +21,8 @@ data class Album(
     val year: String,
     val genre: String,
     val coverUrl: String?,
+    /** Cover lokal di res/drawable (null = pakai placeholder umum). */
+    val coverRes: Int? = null,
 )
 
 /** Model album untuk halaman detail. */
@@ -32,6 +34,7 @@ data class AlbumDetail(
     val genre: String,
     val description: String,
     val coverUrl: String?,
+    val coverRes: Int? = null,
 )
 
 /** Satu lagu pada tracklist album. */

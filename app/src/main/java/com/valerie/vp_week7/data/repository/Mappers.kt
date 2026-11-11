@@ -1,10 +1,12 @@
 package com.valerie.vp_week7.data.repository
 
 import com.valerie.vp_week7.data.dto.AlbumDto
+import com.valerie.vp_week7.data.local.CatalogAlbum
 import com.valerie.vp_week7.data.dto.ArtistDto
 import com.valerie.vp_week7.data.dto.TrackDto
 import com.valerie.vp_week7.model.Album
 import com.valerie.vp_week7.model.AlbumDetail
+import com.valerie.vp_week7.model.AlbumWithTracks
 import com.valerie.vp_week7.model.Artist
 import com.valerie.vp_week7.model.Track
 
@@ -45,4 +47,36 @@ fun TrackDto.toDomain(fallbackNumber: Int) = Track(
     title = strTrack,
     genre = strGenre.clean() ?: "-",
     durationMs = intDuration?.toLongOrNull(),
+)
+
+fun CatalogAlbum.toAlbum(artistName: String) = Album(
+    id = id,
+    title = title,
+    artistName = artistName,
+    year = year,
+    genre = genre,
+    coverUrl = coverUrl,
+    coverRes = coverRes,
+)
+
+fun CatalogAlbum.toAlbumWithTracks(artistName: String) = AlbumWithTracks(
+    album = AlbumDetail(
+        id = id,
+        title = title,
+        artistName = artistName,
+        year = year,
+        genre = genre,
+        description = description,
+        coverUrl = coverUrl,
+        coverRes = coverRes,
+    ),
+    tracks = tracks.mapIndexed { index, t ->
+        Track(
+            id = "$id-${index + 1}",
+            number = index + 1,
+            title = t.title,
+            genre = genre,
+            durationMs = t.durationMs,
+        )
+    },
 )

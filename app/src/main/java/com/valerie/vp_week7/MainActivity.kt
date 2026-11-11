@@ -11,7 +11,6 @@ import com.valerie.vp_week7.ui.theme.Vp_week7Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Desain selalu gelap -> ikon status/navigation bar selalu terang
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),

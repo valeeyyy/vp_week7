@@ -34,7 +34,7 @@ fun AlbumCard(album: Album, onClick: () -> Unit, modifier: Modifier = Modifier) 
     ) {
         RemoteImage(
             url = album.coverUrl,
-            placeholder = R.drawable.album_cover,
+            placeholder = album.coverRes ?: R.drawable.album_cover,
             contentDescription = album.title,
             modifier = Modifier
                 .fillMaxWidth()

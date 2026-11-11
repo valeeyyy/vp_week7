@@ -155,7 +155,7 @@ private fun AlbumHeader(album: AlbumDetail) {
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
         RemoteImage(
             url = album.coverUrl,
-            placeholder = R.drawable.album_cover,
+            placeholder = album.coverRes ?: R.drawable.album_cover,
             contentDescription = album.title,
             modifier = Modifier
                 .size(240.dp)
