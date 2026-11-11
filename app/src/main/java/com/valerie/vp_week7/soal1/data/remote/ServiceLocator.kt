@@ -13,9 +13,11 @@ import java.util.concurrent.TimeUnit
 object ServiceLocator {
 
     private const val BASE_URL = "https://www.pokemonpricetracker.com/api/v2/"
+// API KEY 1 (uncomment salah satu kalo kena limit)
+//    private const val API_KEY = "pokeprice_free_cd7ee20c362fceb926e6bcce6d996d4c21dc4147a315efe1"
 
-    private const val API_KEY = "pokeprice_free_cd7ee20c362fceb926e6bcce6d996d4c21dc4147a315efe1"
-
+    // API KEY 2
+    private const val API_KEY = "pokeprice_free_89d115024dbba72b71f9f1bb0652fc901bdc8497e7d9edb1"
     private val json = Json {
         ignoreUnknownKeys = true
         coerceInputValues = true
