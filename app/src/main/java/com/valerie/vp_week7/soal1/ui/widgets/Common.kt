@@ -23,6 +23,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CatchingPokemon
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Search
@@ -103,25 +104,12 @@ fun PokeballLogo(modifier: Modifier = Modifier) {
             .background(PokeRed, RoundedCornerShape(10.dp)),
         contentAlignment = Alignment.Center,
     ) {
-        Canvas(Modifier.size(30.dp)) {
-            val stroke = 2.6.dp.toPx()
-            val r = size.minDimension / 2 - stroke / 2
-            // Bottom half filled white
-            drawArc(
-                color = Color.White,
-                startAngle = 0f,
-                sweepAngle = 180f,
-                useCenter = true,
-                topLeft = Offset(center.x - r, center.y - r),
-                size = androidx.compose.ui.geometry.Size(r * 2, r * 2),
-            )
-            // Outer ring
-            drawCircle(Color.White, radius = r, style = Stroke(stroke))
-            // Center button: white disc, red ring, white dot
-            drawCircle(Color.White, radius = r * 0.46f)
-            drawCircle(PokeRed, radius = r * 0.30f)
-            drawCircle(Color.White, radius = r * 0.15f)
-        }
+        Icon(
+            imageVector = Icons.Filled.CatchingPokemon,
+            contentDescription = null,
+            tint = Color.White,
+            modifier = Modifier.size(28.dp),
+        )
     }
 }
 

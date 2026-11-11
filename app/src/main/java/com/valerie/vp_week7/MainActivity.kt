@@ -18,8 +18,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             // Uncomment salah satu soal sesuai dengan soal yang ingin di run
-            Soal1App()      // Soal 1: PokeTracker
-            // Soal2App()   // Soal 2: Music Artist
+            // Soal1App()      // Soal 1: PokeTracker
+            Soal2App()   // Soal 2: Music Artist
         }
     }
 }
