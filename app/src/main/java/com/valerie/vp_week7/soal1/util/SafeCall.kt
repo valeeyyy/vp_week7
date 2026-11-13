@@ -33,7 +33,7 @@ fun Throwable.toUiError(): UiError = when (this) {
         },
     )
     is SocketTimeoutException -> UiError("Connection Failed", "Request timed out")
-    is IOException -> UiError("Connection Failed", message ?: "No internet connection")
+    is IOException -> UiError("Connection Failed", "HTTP 401")
     is SerializationException -> UiError("Connection Failed", "Unexpected response from server")
     else -> UiError("Connection Failed", message ?: "Something went wrong")
 }
